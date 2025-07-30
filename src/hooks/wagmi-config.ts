@@ -1,28 +1,27 @@
 import { createConfig, http } from 'wagmi';
-import { liskSepolia } from 'wagmi/chains';
 import { injected, metaMask, walletConnect } from 'wagmi/connectors';
 
-// If Lisk Sepolia is not available in wagmi/chains, define it manually
-const liskSepoliaCustom = {
-  id: 4202,
-  name: 'Lisk Sepolia Testnet',
+// Define Morph Holesky Testnet
+const morphHolesky = {
+  id: 920, // replace with the actual chain ID for Morph Holesky
+  name: 'Morph Holesky Testnet',
   nativeCurrency: {
     decimals: 18,
-    name: 'Sepolia Ether',
+    name: 'Ether',
     symbol: 'ETH',
   },
   rpcUrls: {
     default: {
-      http: ['https://rpc.sepolia-api.lisk.com'],
+      http: [`https://2810.rpc.thirdweb.com/${import.meta.env.VITE_THIRDWEB_CLIENT_ID}`], // replace with actual Morph Holesky RPC URL
     },
     public: {
-      http: ['https://rpc.sepolia-api.lisk.com'],
+      http: [`https://2810.rpc.thirdweb.com/${import.meta.env.VITE_THIRDWEB_CLIENT_ID}`], // same here
     },
   },
   blockExplorers: {
     default: {
-      name: 'Lisk Sepolia Explorer',
-      url: 'https://sepolia-blockscout.lisk.com',
+      name: 'Morph Holesky Explorer',
+      url: 'https://explorer-holesky.morphl2.io', // replace with actual explorer URL
     },
   },
   testnet: true,
@@ -30,15 +29,14 @@ const liskSepoliaCustom = {
 
 // Create wagmi config
 export const wagmiConfig = createConfig({
-  chains: [liskSepoliaCustom], // Use liskSepolia if available in wagmi/chains
+  chains: [morphHolesky],
   connectors: [
     injected(),
     metaMask(),
-    // Add WalletConnect if you have a project ID
     // walletConnect({ projectId: 'your-project-id' }),
   ],
   transports: {
-    [liskSepoliaCustom.id]: http(),
+    [morphHolesky.id]: http(),
   },
 });
 
