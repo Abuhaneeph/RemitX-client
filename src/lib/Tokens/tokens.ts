@@ -19,7 +19,7 @@ const tokens: Token[] = [
     name: 'Test Core', 
     balance: 0.5,
     address: '0xdcc703c0E500B653Ca82273B7BFAd8045D85a470', // Native token address
-    pool: ["AFR", "USDT"],
+    pool: ["AFR", "USDT","WBTC"],
     poolId: [1, 2],
     img: "https://assets.pancakeswap.finance/web/native/1.png"
   },
@@ -48,7 +48,7 @@ const tokens: Token[] = [
     symbol: 'AFR', 
     name: 'AfriRemit', 
     balance: 1250,
-    address: '0x48D2210bd4E72c741F74E6c0E8f356b2C36ebB7A', // Correct AFR address
+    address: '0xC7d68ce9A8047D4bF64E6f7B79d388a11944A06E', // Correct AFR address
     pool: ["TCORE2"],
     poolId: [1],
     img: 'https://cdn.moralis.io/TCORE2/0x6b3595068778dd592e39a122f4f5a5cf09c90fe2.png',
@@ -58,7 +58,7 @@ const tokens: Token[] = [
     symbol: 'AFX', 
     name: 'AfriStable', 
     balance: 1250,
-    address: '0xCcD4D22E24Ab5f9FD441a6E27bC583d241554a3c', // Correct AFX address
+    address: '0x2B2068a831e7C7B2Ac4D97Cd293F934d2625aB69', // Correct AFX address
     pool: ["cZAR", "USDT"],
     poolId: [5, 6],
     img: 'https://www.xe.com/svgs/flags/ngn.static.svg',
@@ -68,8 +68,8 @@ const tokens: Token[] = [
     symbol: 'cNGN', 
     name: 'Crypto Naira', 
     balance: 1250,
-    address: '0x7dd1aD415F58D91BbF76BcC2640cc6FdD44Aa94b', // Correct cNGN address
-    pool: ["cZAR"],
+    address: '0x48D2210bd4E72c741F74E6c0E8f356b2C36ebB7A', // Correct cNGN address
+    pool: ["cZAR","WBTC"],
     poolId: [3],
     img: 'https://www.xe.com/svgs/flags/ngn.static.svg',
   },
@@ -78,7 +78,7 @@ const tokens: Token[] = [
     symbol: 'cZAR', 
     name: 'Crypto South African Rand', 
     balance: 1250,
-    address: '0xaC56E37f70407f279e27cFcf2E31EdCa888EaEe4', // Correct cZAR address
+    address: '0x7dd1aD415F58D91BbF76BcC2640cc6FdD44Aa94b', // Correct cZAR address
     pool: ["cNGN", "AFX"],
     poolId: [3, 5],
     img: 'https://www.xe.com/svgs/flags/zar.static.svg',
@@ -103,21 +103,29 @@ const tokens: Token[] = [
     poolId: [4],
     img: 'https://www.xe.com/svgs/flags/kes.static.svg',
   },
+  { 
+   id : 10,
+    symbol: 'WBTC', 
+    name: 'Wrapped Bitcoin', 
+    balance: 1250,
+    address: '0xF12D5E4D561000F1F464E4576bb27eA0e83931da', 
+    pool: ["cNGN","TCORE2"],
+    poolId: [4],
+    img: '/btc.png',
+  }
+
 ];
 
 export default tokens;
 
 
+export const mock_btc=  { 
+
+    symbol: 'WBTC', 
+    name: 'Wrapped Bitcoin', 
+    address: '0xF12D5E4D561000F1F464E4576bb27eA0e83931da', 
+    img: '/btc.png',
+  }
 
 
-// Updated addresses array for reference:
-/*
-USDT: 0x25a8e2d1e9883D1909040b6B3eF2bb91feAB2e2f
-WETH: 0xC7d68ce9A8047D4bF64E6f7B79d388a11944A06E
-AFR:  0x48D2210bd4E72c741F74E6c0E8f356b2C36ebB7A
-AFX:  0x8F11F588B1Cc0Bc88687F7d07d5A529d34e5CD84
-cNGN: 0x7dd1aD415F58D91BbF76BcC2640cc6FdD44Aa94b
-cZAR: 0xaC56E37f70407f279e27cFcf2E31EdCa888EaEe4
-cGHS: 0x48686EA995462d611F4DA0d65f90B21a30F259A5
-cKES: 0xC0c182d9895882C61C1fC1DF20F858e5E29a4f71
-*/
+

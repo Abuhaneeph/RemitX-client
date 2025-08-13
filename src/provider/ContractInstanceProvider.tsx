@@ -6,24 +6,35 @@ import { Token_ABI} from '../lib/ABI/TestToken_ABI.ts';
 import { SWAP_ABI } from '../lib/ABI/Swap_ABI.ts';
 import { AfriStable_ABI } from '@/lib/ABI/AfriStable_ABI.ts';
 import {Saving_ABI} from '@/lib/ABI/Saving_ABI.ts'
+import { MockBTC_ABI } from '@/lib/ABI/MockBTC_abi.ts';
 import tokens from '@/lib/Tokens/tokens.ts';
 
 // Import or define the Token type
 import type { Token } from '@/lib/Tokens/tokens.ts';
-
+import { Lending_ABI } from '@/lib/ABI/Lending_ABI.ts';
+import { mock } from 'node:test';
+import {LST_BTC_ABI} from '@/lib/ABI/lstBTC_ABI.ts';
+import { yieldVault_ABI } from '@/lib/ABI/yieldVault_ABI.ts';
 // Contract addresses - replace with your actual contract addresses
 export const CONTRACT_ADDRESSES = {
-  swapAddress: '0x013b0CA4E4559339F43682B7ac05479eD48E694f',
-  priceFeedAddress: '0x6a257B0a406eB762C105130314dB15B1a29AbC4e',
-  afriStableAddress: '0x6615c93A524E2B2daa36276Ac418D3cB60d2DC60',
-  savingAddress: '0x1CC25BCD029E6E0Bf9767216A885A29Eb79f93f0'
+  swapAddress: '0xc271212C6c48d4FF2b4117B4136d98a41542F949',
+  priceFeedAddress: '0x48686EA995462d611F4DA0d65f90B21a30F259A5',
+  afriStableAddress: '0x2B2068a831e7C7B2Ac4D97Cd293F934d2625aB69',
+  savingAddress: '0xa854EC84d953D81Fe5C59c09369BE94b4548D748',
+  lendingProtocolAddress: '0x5CD11BAD37C63E30039BA4A741Ad9c5e837c52EF',
+  mockBtcAddress: '0xF12D5E4D561000F1F464E4576bb27eA0e83931da', // Replace with actual Mock BTC contract address
+  lstBTCAddress: '0xDeA521E585D429291f99631D751f5f02F544909b',
+  btcStakingAddress: '0xBc6d8B5cC83E32079f75bB44cF723699B34c8495',
+  yieldVaultAddress: '0xF7147Ee61060e3A33DBEd03207413c9C456004BC'
+
+
 };
 
 // Core Testnet chain ID
 const CORE_CHAIN_ID = 1114;
-
+//https://1114.rpc.thirdweb.com/1e9556ac7186f6b32eeb1bb30a368ce6
 // Thirdweb RPC endpoint
-const THIRDWEB_RPC_URL = `https://rpc.test2.btcs.network`;
+const THIRDWEB_RPC_URL = `https://1114.rpc.thirdweb.com/${import.meta.env.VITE_THIRDWEB_CLIENT_ID}`;
 
 // Enhanced context interface with Thirdweb integration
 interface ContractInstancesContextType {
@@ -33,6 +44,10 @@ interface ContractInstancesContextType {
   TEST_TOKEN_CONTRACT_INSTANCE: (tokenAddress: string) => Promise<ethers.Contract | null>;
   PRICEAPI_CONTRACT_INSTANCE: () => Promise<ethers.Contract | null>;
   SAVING_CONTRACT_INSTANCE: () => Promise<ethers.Contract | null>;
+  LENDING_CONTRACT_INSTANCE: () => Promise<ethers.Contract | null>;
+  MOCK_BTC_CONTRACT_INSTANCE: () => Promise<ethers.Contract | null>;
+  LST_BTC_CONTRACT_INSTANCE: () => Promise<ethers.Contract | null>;
+  YIELD_CONTRACT_INSTANCE: () => Promise<ethers.Contract | null>;
   signer: ethers.Signer | null;
   provider: ethers.JsonRpcProvider | null;
   address: string | null;
@@ -438,6 +453,55 @@ export const ContractInstanceProvider: React.FC<{ children: ReactNode }> = ({ ch
     return new ethers.Contract(CONTRACT_ADDRESSES.savingAddress, Saving_ABI, signerOrProvider);
   };
 
+
+   const LENDING_CONTRACT_INSTANCE = async (): Promise<ethers.Contract | null> => {
+    if (!provider || !isConnected || !isCorrectNetwork) {
+      console.warn('Provider not available, wallet not connected, or wrong network.');
+      return null;
+    }
+    
+    const signerOrProvider = signer || provider;
+    return new ethers.Contract(CONTRACT_ADDRESSES.lendingProtocolAddress, Lending_ABI, signerOrProvider);
+  };
+
+  const YIELD_CONTRACT_INSTANCE = async (): Promise<ethers.Contract | null> => {
+    if (!provider || !isConnected || !isCorrectNetwork) {   
+
+      console.warn('Provider not available, wallet not connected, or wrong network.');
+      return null;
+    }
+        const signerOrProvider = signer || provider;
+    return new ethers.Contract(CONTRACT_ADDRESSES.yieldVaultAddress, yieldVault_ABI, signerOrProvider);
+  }
+
+
+     const MOCK_BTC_CONTRACT_INSTANCE = async (): Promise<ethers.Contract | null> => {
+    if (!provider || !isConnected || !isCorrectNetwork) {
+      console.warn('Provider not available, wallet not connected, or wrong network.');
+      return null;
+    }
+    
+
+    
+    const signerOrProvider = signer || provider;
+    return new ethers.Contract(CONTRACT_ADDRESSES.mockBtcAddress, MockBTC_ABI, signerOrProvider);
+  };
+
+
+  
+     const LST_BTC_CONTRACT_INSTANCE = async (): Promise<ethers.Contract | null> => {
+    if (!provider || !isConnected || !isCorrectNetwork) {
+      console.warn('Provider not available, wallet not connected, or wrong network.');
+      return null;
+    }
+    
+
+    
+    const signerOrProvider = signer || provider;
+    return new ethers.Contract(CONTRACT_ADDRESSES.lstBTCAddress, LST_BTC_ABI, signerOrProvider);
+  };
+
+
   // Manual reconnection function
   const reconnectSigner = async (): Promise<void> => {
     try {
@@ -492,6 +556,10 @@ export const ContractInstanceProvider: React.FC<{ children: ReactNode }> = ({ ch
     TEST_TOKEN_CONTRACT_INSTANCE,
     PRICEAPI_CONTRACT_INSTANCE,
     SAVING_CONTRACT_INSTANCE,
+    LENDING_CONTRACT_INSTANCE,
+    MOCK_BTC_CONTRACT_INSTANCE,
+    LST_BTC_CONTRACT_INSTANCE,
+    YIELD_CONTRACT_INSTANCE,
     signer,
     provider,
     address,

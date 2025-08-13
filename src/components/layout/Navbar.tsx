@@ -74,14 +74,16 @@ const TopNavbar = ({
     { name: 'Dashboard', key: 'dashboard', icon: Home },
     { name: 'Send', key: 'send', icon: Send },
     { name: 'Swap', key: 'swap', icon: ArrowLeftRight },
-    { name: 'Save', key: 'savings', icon: PiggyBank },
-    { name: 'Buy/Sell', key: 'Buy/Sell', icon: DollarSignIcon },
+   // { name: 'Save', key: 'savings', icon: PiggyBank },
+   // { name: 'Buy/Sell', key: 'Buy/Sell', icon: DollarSignIcon },
+    {name:'Lending', key: 'lending', icon: PiggyBank},
+       {name: 'Yield Vault', key: 'yieldVault', icon: PiggyBank},
   ];
 
   // Secondary navigation items (in "More" dropdown on desktop, full list on mobile)
   const secondaryNavigation = [
     { name: 'Faucet', key: 'faucet', icon: Droplets },
-    { name: 'Utility Pay', key: 'utility', icon: Zap },
+   // { name: 'Utility Pay', key: 'utility', icon: Zap },
     { name: 'Admin', key: 'admin', icon: Shield },
   ];
 
@@ -117,16 +119,12 @@ const TopNavbar = ({
           >  
             <div className="relative">
               <img 
-                src="https://res.cloudinary.com/ecosheane/image/upload/v1749952368/logo_virjcs.jpg"
+                src="/RemitX-logo.png"
                 alt="FlowPay Logo"
-                className="w-12 h-12 rounded-xl object-cover transition-all duration-300 group-hover:scale-105"
+                className="w-30 h-20 rounded-xl object-cover transition-all duration-300 group-hover:scale-105"
               />
             </div>
-            <div className="flex flex-col">
-                <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                  FlowPay
-                </span>
-              </div>
+           
           </button>
           {/* Navlinks immediately after logo - hidden on mobile */}
           <nav className="hidden lg:flex items-center space-x-1 ml-2">
@@ -209,6 +207,7 @@ const TopNavbar = ({
               </button>
             )}
             {/* AI Chat Button */}
+            {/*
             <button 
               onClick={() => setShowAIChat(true)}
               className="p-2 rounded-lg hover:bg-stone-100 transition-colors relative group"
@@ -217,6 +216,8 @@ const TopNavbar = ({
               <MessageCircle className="w-5 h-5 text-stone-700 group-hover:text-terracotta transition-colors" />
               <div className="absolute -top-1 -right-1 w-2 h-2 bg-gradient-to-r from-terracotta to-sage rounded-full animate-pulse"></div>
             </button>
+            */}
+            {/* Notifications Button */}
             {/* Notifications */}
             <div className="relative">
               <button 
@@ -274,7 +275,7 @@ const TopNavbar = ({
                   }
                 }}
                 connectModal={{
-                  title: "Connect to FlowPay",
+                  title: "Connect to RemitX",
                   titleIcon: "https://your-logo-url.com/logo.png",
                   showThirdwebBranding: false,
                 }}

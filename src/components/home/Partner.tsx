@@ -9,10 +9,10 @@ const TrustedPartners: React.FC = () => {
 
   const partners = [
     {
-      name: "Morph",
+      name: "Core",
       description: "Blockchain Infrastructure",
-      logo: "https://ml.globenewswire.com/Resource/Download/b7203bf8-dd28-4843-b783-12dff9c778c0",
-      website: "https://www.morphl2.io/",
+      logo: "https://docs.coredao.org/img/core.png",
+      website: "https://coredao.org/",
      
     },
     {
@@ -62,9 +62,9 @@ const TrustedPartners: React.FC = () => {
     gradient: "from-blue-400 to-cyan-500"
   },
   {
-    icon: () => <img src="https://ml.globenewswire.com/Resource/Download/b7203bf8-dd28-4843-b783-12dff9c778c0" alt="Morph" className="w-10 h-10 object-contain" />,
+    icon: () => <img src="https://docs.coredao.org/img/core.png" alt="RemitX" className="w-10 h-10 object-contain" />,
     title: "Testnet Deployed",
-    description: "MVP live on Morph Holesky testnet with core features",
+    description: "MVP live on Core testnet with core features",
     color: "text-purple-600",
     bg: "bg-purple-100",
     gradient: "from-purple-400 to-pink-500"
@@ -177,7 +177,7 @@ const TrustedPartners: React.FC = () => {
         <div className="bg-white/70 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20 shadow-purple-500/10 mb-16">
           <div className="text-center mb-12">
             <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Why Try AfriRemit?
+              Why Try RemitX?
             </h3>
             <p className="text-xl text-gray-600 leading-relaxed">
               We are building a new platform for cross-border payments and digital assets in Africa. Join us on our journey!

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Globe, TrendingUp, Shield, Users, Bitcoin, Coins, Zap, Star } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, Globe, TrendingUp, Shield, Users, Bitcoin, Coins, Zap, Star, RefreshCw } from 'lucide-react';
 
 interface HeroSectionProps {
   onPageChange?: (page: string) => void;
@@ -39,29 +38,29 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onPageChange }) => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white">
-      {/* Stablecoin Logos Background */}
+      {/* Crypto Assets Background */}
       <div className="absolute inset-0 select-none">
-        {/* USDT */}
+        {/* wBTC */}
         <div className="absolute top-24 left-32 w-16 h-16 flex items-center justify-center transition-all duration-500 cursor-pointer opacity-40 hover:opacity-100 hover:scale-110 hover:shadow-lg pointer-events-auto animate-float-1">
-          <span className="text-5xl">🟢</span>
-        </div>
-        {/* ETH */}
-        <div className="absolute top-1/3 right-40 w-16 h-16 flex items-center justify-center transition-all duration-500 cursor-pointer opacity-40 hover:opacity-100 hover:scale-110 hover:shadow-lg pointer-events-auto animate-float-2">
-          <span className="text-5xl">💎</span>
-        </div>
-        {/* USDC */}
-        <div className="absolute bottom-32 left-1/4 w-16 h-16 flex items-center justify-center transition-all duration-500 cursor-pointer opacity-40 hover:opacity-100 hover:scale-110 hover:shadow-lg pointer-events-auto animate-float-3">
-          <span className="text-5xl">🔵</span>
-        </div>
-        {/* BTC */}
-        <div className="absolute bottom-20 right-32 w-16 h-16 flex items-center justify-center transition-all duration-500 cursor-pointer opacity-40 hover:opacity-100 hover:scale-110 hover:shadow-lg pointer-events-auto animate-float-4">
           <span className="text-5xl">🟠</span>
         </div>
-        {/* DAI */}
-        <div className="absolute top-1/4 right-1/4 w-16 h-16 flex items-center justify-center transition-all duration-500 cursor-pointer opacity-40 hover:opacity-100 hover:scale-110 hover:shadow-lg pointer-events-auto animate-float-5">
+        {/* lstBTC */}
+        <div className="absolute top-1/3 right-40 w-16 h-16 flex items-center justify-center transition-all duration-500 cursor-pointer opacity-40 hover:opacity-100 hover:scale-110 hover:shadow-lg pointer-events-auto animate-float-2">
           <span className="text-5xl">🟡</span>
         </div>
-        {/* SOL */}
+        {/* USDT */}
+        <div className="absolute bottom-32 left-1/4 w-16 h-16 flex items-center justify-center transition-all duration-500 cursor-pointer opacity-40 hover:opacity-100 hover:scale-110 hover:shadow-lg pointer-events-auto animate-float-3">
+          <span className="text-5xl">🟢</span>
+        </div>
+        {/* cNGN */}
+        <div className="absolute bottom-20 right-32 w-16 h-16 flex items-center justify-center transition-all duration-500 cursor-pointer opacity-40 hover:opacity-100 hover:scale-110 hover:shadow-lg pointer-events-auto animate-float-4">
+          <span className="text-5xl">💚</span>
+        </div>
+        {/* stCORE */}
+        <div className="absolute top-1/4 right-1/4 w-16 h-16 flex items-center justify-center transition-all duration-500 cursor-pointer opacity-40 hover:opacity-100 hover:scale-110 hover:shadow-lg pointer-events-auto animate-float-5">
+          <span className="text-5xl">⚫</span>
+        </div>
+        {/* cKES */}
         <div className="absolute bottom-1/4 left-1/3 w-16 h-16 flex items-center justify-center transition-all duration-500 cursor-pointer opacity-40 hover:opacity-100 hover:scale-110 hover:shadow-lg pointer-events-auto animate-float-6">
           <span className="text-5xl">🟣</span>
         </div>
@@ -70,90 +69,88 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onPageChange }) => {
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 relative z-10">
         <div className="text-center">
           {/* Premium Badge */}
-          <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500/10 via-green-500/10 to-teal-500/10 backdrop-blur-xl border border-emerald-200/30 text-emerald-700 rounded-full text-sm font-semibold mb-12 hover:scale-105 transition-all duration-300 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-green-400/20 transform -translate-x-full transition-transform duration-500"></div>
-            <Star className="w-4 h-4 text-emerald-500 mr-3 animate-spin-slow relative z-10" />
-            <span className="relative z-10">🌍 Africa's Stablecoin Gateway to the World</span>
-            <Zap className="w-4 h-4 text-green-500 ml-3 animate-pulse relative z-10" />
+          <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500/10 via-red-500/10 to-amber-500/10 backdrop-blur-xl border border-orange-200/30 text-orange-700 rounded-full text-sm font-semibold mb-12 hover:scale-105 transition-all duration-300 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 to-red-400/20 transform -translate-x-full transition-transform duration-500"></div>
+            <Bitcoin className="w-4 h-4 text-orange-500 mr-3 animate-spin-slow relative z-10" />
+            <span className="relative z-10">🚀 Next-Generation Bitcoin Yield & Liquidity Protocol</span>
+            <Zap className="w-4 h-4 text-amber-500 ml-3 animate-pulse relative z-10" />
           </div>
 
           {/* Hero Title with 3D Effect */}
           <div className="relative mb-12">
             <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-8 leading-none tracking-tight">
               <span className="block transform hover:scale-105 transition-transform duration-300">
-                Bridging African
+                Unlock Bitcoin's
               </span>
-              <span className="block bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 bg-clip-text text-transparent">
-                <span>Finance with De-Fi</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 via-green-500/20 to-teal-500/20 blur-3xl animate-pulse"></div>
+              <span className="block bg-gradient-to-r from-orange-500 via-red-500 to-amber-500 bg-clip-text text-transparent">
+                <span>Full Potential</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-red-500/20 to-amber-500/20 blur-3xl animate-pulse"></div>
               </span>
             </h1>
           </div>
 
           {/* Enhanced Subheading */}
           <p className="text-2xl md:text-3xl text-gray-600 mb-16 max-w-5xl mx-auto leading-relaxed font-light">
-            Trade African stablecoins, join traditional savings groups, and access
-            <span className="text-emerald-600 font-semibold"> global DeFi markets </span>
-            on the revolutionary Morph blockchain platform.
+            Generate yield from your Bitcoin, access regional liquidity, and bridge to
+            <span className="text-orange-600 font-semibold"> emerging markets </span>
+            on Core blockchain's revolutionary lstBTC ecosystem.
           </p>
 
-          {/* CTA Buttons - Fixed Navigation */}
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
             <button 
               onClick={handleStartTrading}  
-              className="bg-emerald-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-emerald-600 transition-colors duration-200 flex items-center space-x-2"
+              className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-orange-600 hover:to-red-600 transition-all duration-200 flex items-center space-x-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
-              <span>Start Trading Now</span>
-              <ArrowRight className="w-5 h-5" />
+              <span>Start Earning lstBTC</span>
+              <Bitcoin className="w-5 h-5" />
             </button>
             
             <a
-  href="https://youtu.be/d_bBNkPbcbg"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block border border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold text-lg hover:border-orange-400 hover:text-orange-600 transition-colors duration-200"
->
-  Watch Demo
-</a>
-
+              href="#features"
+              className="inline-block border border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold text-lg hover:border-orange-400 hover:text-orange-600 transition-colors duration-200 flex items-center space-x-2"
+            >
+              <span>Explore Features</span>
+              <RefreshCw className="w-5 h-5" />
+            </a>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             <div className="group text-center">
-              <div className="bg-white/80 backdrop-blur-sm border border-emerald-100 rounded-3xl p-8 hover:bg-white hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-100/50 transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 border border-emerald-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                  <Globe className="w-8 h-8 text-emerald-600" />
+              <div className="bg-white/80 backdrop-blur-sm border border-orange-100 rounded-3xl p-8 hover:bg-white hover:border-orange-200 hover:shadow-xl hover:shadow-orange-100/50 transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-100 to-orange-200 border border-orange-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                  <Bitcoin className="w-8 h-8 text-orange-600" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors duration-300">8+</div>
-                <div className="text-gray-600 text-base">Supported Tokens</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300">lstBTC</div>
+                <div className="text-gray-600 text-base">Yield Generation</div>
               </div>
             </div>
             <div className="group text-center">
-              <div className="bg-white/80 backdrop-blur-sm border border-green-100 rounded-3xl p-8 hover:bg-white hover:border-green-200 hover:shadow-xl hover:shadow-green-100/50 transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-100 to-green-200 border border-green-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                  <TrendingUp className="w-8 h-8 text-green-600" />
+              <div className="bg-white/80 backdrop-blur-sm border border-red-100 rounded-3xl p-8 hover:bg-white hover:border-red-200 hover:shadow-xl hover:shadow-red-100/50 transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-100 to-red-200 border border-red-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                  <Globe className="w-8 h-8 text-red-600" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-300">$2M+</div>
-                <div className="text-gray-600 text-base">Total Volume</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors duration-300">3+</div>
+                <div className="text-gray-600 text-base">Regional Currencies</div>
               </div>
             </div>
             <div className="group text-center">
-              <div className="bg-white/80 backdrop-blur-sm border border-teal-100 rounded-3xl p-8 hover:bg-white hover:border-teal-200 hover:shadow-xl hover:shadow-teal-100/50 transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-br from-teal-100 to-teal-200 border border-teal-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                  <Users className="w-8 h-8 text-teal-600" />
+              <div className="bg-white/80 backdrop-blur-sm border border-amber-100 rounded-3xl p-8 hover:bg-white hover:border-amber-200 hover:shadow-xl hover:shadow-amber-100/50 transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 border border-amber-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                  <RefreshCw className="w-8 h-8 text-amber-600" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors duration-300">0+</div>
-                <div className="text-gray-600 text-base">Active Users</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2 group-hover:text-amber-600 transition-colors duration-300">Instant</div>
+                <div className="text-gray-600 text-base">Swaps Available</div>
               </div>
             </div>
             <div className="group text-center">
-              <div className="bg-white/80 backdrop-blur-sm border border-emerald-100 rounded-3xl p-8 hover:bg-white hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-100/50 transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-green-100 border border-emerald-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                  <Shield className="w-8 h-8 text-emerald-600" />
+              <div className="bg-white/80 backdrop-blur-sm border border-orange-100 rounded-3xl p-8 hover:bg-white hover:border-orange-200 hover:shadow-xl hover:shadow-orange-100/50 transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-100 to-red-100 border border-orange-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                  <Shield className="w-8 h-8 text-orange-600" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors duration-300">100%</div>
-                <div className="text-gray-600 text-base">Secure</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300">Core</div>
+                <div className="text-gray-600 text-base">Native Built</div>
               </div>
             </div>
           </div>

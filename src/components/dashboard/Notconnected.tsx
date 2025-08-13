@@ -1,6 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, ArrowLeftRight, DollarSign, PiggyBank, Gift, Wallet, AlertCircle } from 'lucide-react';
-import { DollarSignIcon } from "lucide-react";
+import { ArrowUpRight, ArrowLeftRight, DollarSign, PiggyBank, Gift, Wallet, AlertCircle, Bitcoin, Layers, RefreshCw, TrendingUp, Shield } from 'lucide-react';
 
 interface WalletNotConnectedProps {
   exchangeRates: {[key: string]: { rate: number, change: number, positive: boolean | null }};
@@ -13,41 +12,41 @@ const WalletNotConnected: React.FC<WalletNotConnectedProps> = ({ exchangeRates }
         {/* Hero Section */}
         <div className="text-center mb-16">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 via-green-600/20 to-yellow-600/20 blur-3xl opacity-30 rounded-full"></div>
-            <div className="relative w-24 h-24 bg-gradient-to-br from-orange-600 via-green-600 to-yellow-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl shadow-orange-600/20">
-              <Wallet className="w-12 h-12 text-white" />
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 via-red-600/20 to-amber-600/20 blur-3xl opacity-30 rounded-full"></div>
+            <div className="relative w-24 h-24 bg-gradient-to-br from-orange-500 via-red-500 to-amber-500 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl shadow-orange-600/20">
+              <Bitcoin className="w-12 h-12 text-white" />
             </div>
           </div>
           <h1 className="text-5xl font-bold text-slate-900 mb-6 bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-clip-text">
-            Welcome to FlowPay
+            Welcome to RemitX
           </h1>
           <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Your gateway to seamless cross-border payments and digital asset management across Africa. 
-            Connect your wallet to unlock the full potential of decentralized finance.
+            Revolutionary Bitcoin yield and liquidity protocol on Core blockchain. Generate yield from your Bitcoin, 
+            access regional stablecoins, and unlock Bitcoin's full potential in emerging markets.
           </p>
-          <div className="inline-flex items-center space-x-3 bg-amber-50 border border-amber-200 rounded-full px-6 py-3 text-amber-800">
+          <div className="inline-flex items-center space-x-3 bg-orange-50 border border-orange-200 rounded-full px-6 py-3 text-orange-800">
             <AlertCircle className="w-5 h-5" />
-            <span className="font-medium">Connect your wallet to get started</span>
+            <span className="font-medium">Connect your wallet to start earning with lstBTC</span>
           </div>
         </div>
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
           {[
-            { key: 'send', title: 'Send Money', subtitle: 'Instant transfers', icon: ArrowUpRight, gradient: 'from-orange-500 to-red-500' },
-            { key: 'swap', title: 'Currency Swap', subtitle: 'Real-time exchange', icon: ArrowLeftRight, gradient: 'from-yellow-500 to-orange-500' },
-            { key: 'Buy/Sell', title: 'Buy & Sell', subtitle: 'Fiat on/off ramp', icon: DollarSignIcon, gradient: 'from-purple-500 to-pink-500' },
-            { key: 'savings', title: 'Smart Savings', subtitle: 'Rotating pools', icon: PiggyBank, gradient: 'from-green-500 to-emerald-500' },
-            { key: 'utility', title: 'Bill Payments', subtitle: 'Utilities & services', icon: Gift, gradient: 'from-blue-500 to-cyan-500' },
+            { key: 'yield', title: 'lstBTC Yield', subtitle: 'Generate Bitcoin yield', icon: Bitcoin, gradient: 'from-orange-500 to-red-500' },
+            { key: 'swap', title: 'Instant Swap', subtitle: 'wBTC ↔ Regional coins', icon: RefreshCw, gradient: 'from-indigo-500 to-purple-500' },
+            { key: 'lending', title: 'Lending Pool', subtitle: 'Borrow against BTC', icon: DollarSign, gradient: 'from-green-500 to-emerald-500' },
+            { key: 'staking', title: 'Core Staking', subtitle: 'Dual staking rewards', icon: Layers, gradient: 'from-blue-500 to-cyan-500' },
+            { key: 'liquidity', title: 'Liquidity Mining', subtitle: 'Earn additional rewards', icon: TrendingUp, gradient: 'from-purple-500 to-pink-500' },
           ].map((feature) => (
             <div key={feature.key} className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r item-center justify opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-xl"></div>
               <div className="relative bg-white/80 backdrop-blur-sm border border-slate-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-not-allowed opacity-75">
-                <div className={`w-14 h-14 bg-gradient-to-br ${feature.gradient} rounded-2xl ml-10 flex items-center justify-center mb-4 shadow-lg`}>
-                  <feature.icon className="w-7 h-7  text-white" />
+                <div className={`w-14 h-14 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mb-4 shadow-lg mx-auto`}>
+                  <feature.icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">{feature.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{feature.subtitle}</p>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2 text-center">{feature.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed text-center">{feature.subtitle}</p>
               </div>
             </div>
           ))}
@@ -57,12 +56,12 @@ const WalletNotConnected: React.FC<WalletNotConnectedProps> = ({ exchangeRates }
         <div className="bg-white/60 backdrop-blur-xl border border-slate-200/50 rounded-3xl p-8 shadow-xl mb-16">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center space-x-3">
-              <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse shadow-lg shadow-emerald-500/50"></div>
-              <h2 className="text-2xl font-bold text-slate-800">Live Exchange Rates</h2>
+              <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse shadow-lg shadow-orange-500/50"></div>
+              <h2 className="text-2xl font-bold text-slate-800">Live Asset Prices</h2>
             </div>
-            <div className="flex items-center space-x-2 bg-emerald-50 px-4 py-2 rounded-full">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-              <span className="text-sm text-emerald-700 font-medium">Real-time</span>
+            <div className="flex items-center space-x-2 bg-orange-50 px-4 py-2 rounded-full">
+              <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+              <span className="text-sm text-orange-700 font-medium">Real-time</span>
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -70,10 +69,31 @@ const WalletNotConnected: React.FC<WalletNotConnectedProps> = ({ exchangeRates }
               Object.entries(exchangeRates).map(
                 ([currency, data], index) => {
                   const typedData = data as { rate: number, change: number, positive: boolean | null };
+                  
+                  // Map currency symbols to RemitX assets
+                  const getAssetInfo = (curr: string) => {
+                    const assetMap: { [key: string]: { name: string, icon: string } } = {
+                      'BTC': { name: 'wBTC', icon: '🟠' },
+                      'ETH': { name: 'lstBTC', icon: '🟡' },
+                      'USDT': { name: 'USDT', icon: '🟢' },
+                      'USDC': { name: 'cNGN', icon: '💚' },
+                      'BNB': { name: 'cKES', icon: '🟣' },
+                      'SOL': { name: 'cGHS', icon: '🔵' },
+                      'ADA': { name: 'stCORE', icon: '⚫' },
+                      'DOT': { name: 'CORE', icon: '🔴' }
+                    };
+                    return assetMap[curr] || { name: curr, icon: '⚪' };
+                  };
+                  
+                  const assetInfo = getAssetInfo(currency);
+                  
                   return (
                     <div key={index} className="bg-gradient-to-br from-slate-50 to-white border border-slate-100 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-lg font-medium text-slate-700">{currency}</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-2xl">{assetInfo.icon}</span>
+                          <span className="text-lg font-medium text-slate-700">{assetInfo.name}</span>
+                        </div>
                         <div className={`w-2 h-2 rounded-full ${typedData.positive === true ? 'bg-emerald-500' : typedData.positive === false ? 'bg-red-500' : 'bg-slate-400'}`}></div>
                       </div>
                       <div className="text-2xl font-bold text-slate-900 mb-2">${typedData.rate.toFixed(6)}</div>
@@ -102,18 +122,47 @@ const WalletNotConnected: React.FC<WalletNotConnectedProps> = ({ exchangeRates }
           </div>
         </div>
 
+        {/* Core Blockchain Integration */}
+        <div className="bg-gradient-to-r from-orange-500/10 via-red-500/10 to-amber-500/10 backdrop-blur-xl border border-orange-200/50 rounded-3xl p-8 shadow-xl mb-16">
+          <div className="text-center mb-8">
+            <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <Layers className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-2xl font-bold text-slate-800 mb-4">Built on Core Blockchain</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              RemitX leverages Core's Satoshi Plus consensus for native Bitcoin staking integration and enhanced security
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { title: 'Satoshi Plus Consensus', desc: 'Hybrid Bitcoin-Ethereum security model', icon: Shield, color: 'orange' },
+              { title: 'Native BTC Staking', desc: 'Direct Bitcoin staking rewards', icon: Bitcoin, color: 'red' },
+              { title: 'stCORE Integration', desc: 'Governance and fee distribution', icon: Layers, color: 'amber' }
+            ].map((item, index) => (
+              <div key={index} className="bg-white/60 backdrop-blur-sm border border-white/30 rounded-2xl p-6 text-center">
+                <div className={`w-12 h-12 bg-gradient-to-br from-${item.color}-500 to-${item.color}-600 rounded-xl flex items-center justify-center mx-auto mb-4`}>
+                  <item.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Getting Started */}
         <div className="bg-white/60 backdrop-blur-xl border border-slate-200/50 rounded-3xl p-8 shadow-xl">
-          <h2 className="text-2xl font-bold text-slate-800 mb-8 text-center">Get Started in Minutes</h2>
+          <h2 className="text-2xl font-bold text-slate-800 mb-8 text-center">Start Earning with lstBTC</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { step: '1', title: 'Connect Wallet', desc: 'Link your digital wallet securely', color: 'orange' },
-              { step: '2', title: 'Add Funds', desc: 'Buy stablecoins or transfer assets', color: 'green' },
-              { step: '3', title: 'Start Trading', desc: 'Send, swap, and save with ease', color: 'yellow' }
+              { step: '1', title: 'Connect Wallet', desc: 'Link your Core-compatible wallet', color: 'orange', icon: Wallet },
+              { step: '2', title: 'Deposit wBTC', desc: 'Convert to yield-bearing lstBTC', color: 'red', icon: Bitcoin },
+              { step: '3', title: 'Earn Rewards', desc: 'Generate yield and access liquidity', color: 'amber', icon: TrendingUp }
             ].map((item) => (
               <div key={item.step} className="text-center group">
                 <div className={`w-16 h-16 bg-gradient-to-br from-${item.color}-500 to-${item.color}-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                  <span className="text-white font-bold text-xl">{item.step}</span>
+                  <item.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold text-slate-800 mb-2">{item.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{item.desc}</p>

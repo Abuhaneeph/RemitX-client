@@ -5,16 +5,16 @@ const openai = new OpenAI({
   baseURL: 'https://openrouter.ai/api/v1',
   apiKey: import.meta.env.VITE_OPENROUTER_API_KEY || '<OPENROUTER_API_KEY>',
   defaultHeaders: {
-    'HTTP-Referer': import.meta.env.VITE_SITE_URL || 'https://FlowPay.vercel.app/',
-    'X-Title': 'FlowPay - AI Assistant',
+    'HTTP-Referer': import.meta.env.VITE_SITE_URL || 'https://RemitX.netlify.app/',
+    'X-Title': 'RemitX - AI Assistant',
   },
   dangerouslyAllowBrowser: true,
 });
 
-// System prompt for FlowPay-specific context
-const FLOWPAY_SYSTEM_PROMPT = `You are the FlowPay AI Assistant, an expert in blockchain technology, cryptocurrency, DeFi, and the FlowPay platform specifically. You have deep knowledge about:
+// System prompt for RemitX-specific context
+const FLOWPAY_SYSTEM_PROMPT = `You are the RemitX AI Assistant, an expert in blockchain technology, cryptocurrency, DeFi, and the RemitX platform specifically. You have deep knowledge about:
 
-**FlowPay Platform:**
+**RemitX Platform:**
 - First Global DEX for African Stablecoins built on Lisk Blockchain
 - Supported tokens: AFX, cNGN (Nigerian Naira), cZAR (South African Rand), cGHS (Ghanaian Cedi), cKES (Kenyan Shilling), USDT, WETH, AFR
 - Core features: Token swapping, Digital savings groups (Ajo/Esusu), Send money, Faucet, Buy/Sell, Utility payments
@@ -41,7 +41,7 @@ const FLOWPAY_SYSTEM_PROMPT = `You are the FlowPay AI Assistant, an expert in bl
 - Be helpful, professional, and knowledgeable
 - Use clear explanations for complex blockchain concepts
 - Provide step-by-step guidance when needed
-- Reference specific FlowPay features when relevant
+- Reference specific RemitX features when relevant
 - Be encouraging about financial inclusion and DeFi adoption
 - Always prioritize user security and best practices
 
@@ -52,7 +52,7 @@ const FLOWPAY_SYSTEM_PROMPT = `You are the FlowPay AI Assistant, an expert in bl
 - Explain gas fees and transaction costs clearly
 - Highlight the benefits of decentralized finance for Africa
 
-Respond as a knowledgeable, helpful assistant focused on empowering users with blockchain and FlowPay platform knowledge.`;
+Respond as a knowledgeable, helpful assistant focused on empowering users with blockchain and RemitX platform knowledge.`;
 
 /**
  * Send a message to OpenRouter API and get AI response
@@ -112,7 +112,7 @@ export const getAIResponse = async (messages, model = 'openai/gpt-4o') => {
 };
 
 /**
- * Get a quick response for common FlowPay queries
+ * Get a quick response for common RemitX queries
  * @param {string} query - User query
  * @returns {Promise<string>} - AI response
  */
@@ -135,18 +135,18 @@ export const getQuickAfriRemitResponse = async (query) => {
  */
 export const getContextualHelp = async (context, userQuestion) => {
   const contextPrompts = {
-    swap: "The user is currently on the FlowPay swap page where they can exchange African stablecoins and other tokens. They can add liquidity to pools and earn rewards.",
-    savings: "The user is on the FlowPay savings (Ajo/Esusu) page where they can join or create traditional rotating savings groups with smart contract automation.",
-    dashboard: "The user is viewing their FlowPay dashboard with wallet balances, exchange rates, and portfolio overview.",
+    swap: "The user is currently on the RemitX swap page where they can exchange African stablecoins and other tokens. They can add liquidity to pools and earn rewards.",
+    savings: "The user is on the RemitX savings (Ajo/Esusu) page where they can join or create traditional rotating savings groups with smart contract automation.",
+    dashboard: "The user is viewing their RemitX dashboard with wallet balances, exchange rates, and portfolio overview.",
     send: "The user is on the send money page for transferring tokens to other addresses.",
-    faucet: "The user is using the testnet faucet to get test tokens for trying out FlowPay features.",
+    faucet: "The user is using the testnet faucet to get test tokens for trying out RemitX features.",
     buysell: "The user is on the buy/sell page for converting between fiat and cryptocurrencies."
   };
 
   const messages = [
     {
       role: 'user',
-      content: `Context: ${contextPrompts[context] || 'General FlowPay platform usage'}\n\nUser Question: ${userQuestion}`
+      content: `Context: ${contextPrompts[context] || 'General RemitX platform usage'}\n\nUser Question: ${userQuestion}`
     }
   ];
   

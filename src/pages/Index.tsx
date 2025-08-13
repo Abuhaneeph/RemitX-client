@@ -16,7 +16,8 @@ import AdminInterface from '@/components/Admin';
 import UtilityPaymentInterface from '../components/UtilityInterface';
 import GaslessHome from '../components/Test';
 import LandingPage from '../components/home/index';
-
+import LendingInterface from '@/components/LendingProtocolInterface';
+import YieldVaultInterface from '@/components/yieldVaultInterface';
 // Route configuration
 const routes = {
   landing: {
@@ -37,6 +38,10 @@ const routes = {
   },
   savings: {
     component: SavingsInterface,
+    requiresLayout: true,
+  },
+  yieldVault: {
+    component: YieldVaultInterface, 
     requiresLayout: true,
   },
   family: {
@@ -69,6 +74,10 @@ const routes = {
   },
   utility: {
     component: UtilityPaymentInterface,
+    requiresLayout: true,
+  },
+  lending:{
+    component: LendingInterface,
     requiresLayout: true,
   },
   admin: {

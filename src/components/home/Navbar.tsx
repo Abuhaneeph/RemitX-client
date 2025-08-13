@@ -45,17 +45,13 @@ const Navbar: React.FC<NavbarProps> = ({ onPageChange }) => {
             <Link to="/" className="flex items-center space-x-3">
               <div className="relative">
                 <img
-                  src="https://res.cloudinary.com/ecosheane/image/upload/v1749952368/logo_virjcs.jpg"
-                  alt="FlowPay Logo"
-                  className="w-12 h-12 rounded-xl object-cover transition-all duration-300 group-hover:scale-105"
+                  src="RemitX-logo.png"
+                  alt="RemitX Logo"
+                  className="w-30 h-20 rounded-xl object-cover transition-all duration-300 group-hover:scale-105"
                 />
               </div>
 
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                  FlowPay
-                </span>
-              </div>
+            
             </Link>
           </div>
 

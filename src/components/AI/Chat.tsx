@@ -183,7 +183,7 @@ const AIChatModal = ({ isOpen, onClose, context = 'general' }) => {
     setMessages([
       {
         id: '1',
-        text: "Chat cleared! I'm still here to help with FlowPay, blockchain, and DeFi questions. What would you like to know?",
+        text: "Chat cleared! I'm still here to help with RemitX, blockchain, and DeFi questions. What would you like to know?",
         isUser: false,
         timestamp: new Date()
       }
@@ -201,7 +201,7 @@ const AIChatModal = ({ isOpen, onClose, context = 'general' }) => {
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   };
 
-  // Quick action prompts specific to FlowPay
+  // Quick action prompts specific to RemitX
   const quickActions = [
     "How do I swap tokens?",
     "Explain Ajo savings",
@@ -250,7 +250,7 @@ const AIChatModal = ({ isOpen, onClose, context = 'general' }) => {
                 )}></div>
               </div>
               <div>
-                <h3 className="font-semibold text-stone-900">FlowPay AI</h3>
+                <h3 className="font-semibold text-stone-900">RemitX AI</h3>
                 <p className="text-xs text-stone-500">
                   {isConfigured() ? "Blockchain & DeFi Expert" : "Configuration needed"}
                 </p>

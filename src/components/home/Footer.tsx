@@ -27,33 +27,33 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
       { name: 'Buy/Sell', page: 'Buy/Sell' }
     ],
     resources: [
-      { name: 'Documentation', href: 'https://docs.FlowPay.com', external: true },
-      { name: 'API Reference', href: 'https://api.FlowPay.com', external: true },
-      { name: 'Help Center', href: 'https://help.FlowPay.com', external: true },
-      { name: 'Blog', href: 'https://blog.FlowPay.com', external: true },
-      { name: 'Tutorials', href: 'https://tutorials.FlowPay.com', external: true }
+      { name: 'Documentation', href: 'https://docs.RemitX.com', external: true },
+      { name: 'API Reference', href: 'https://api.RemitX.com', external: true },
+      { name: 'Help Center', href: 'https://help.RemitX.com', external: true },
+      { name: 'Blog', href: 'https://blog.RemitX.com', external: true },
+      { name: 'Tutorials', href: 'https://tutorials.RemitX.com', external: true }
     ],
     company: [
-      { name: 'About Us', href: 'https://FlowPay.com/about', external: true },
-      { name: 'Careers', href: 'https://FlowPay.com/careers', external: true },
-      { name: 'Press Kit', href: 'https://FlowPay.com/press', external: true },
-      { name: 'Partners', href: 'https://FlowPay.com/partners', external: true },
-      { name: 'Contact', href: 'mailto:contact@FlowPay.com', external: true }
+      { name: 'About Us', href: 'https://RemitX.com/about', external: true },
+      { name: 'Careers', href: 'https://RemitX.com/careers', external: true },
+      { name: 'Press Kit', href: 'https://RemitX.com/press', external: true },
+      { name: 'Partners', href: 'https://RemitX.com/partners', external: true },
+      { name: 'Contact', href: 'mailto:contact@RemitX.com', external: true }
     ],
     legal: [
-      { name: 'Terms of Service', href: 'https://FlowPay.com/terms', external: true },
-      { name: 'Privacy Policy', href: 'https://FlowPay.com/privacy', external: true },
-      { name: 'Cookie Policy', href: 'https://FlowPay.com/cookies', external: true },
-      { name: 'Security', href: 'https://FlowPay.com/security', external: true },
-      { name: 'Compliance', href: 'https://FlowPay.com/compliance', external: true }
+      { name: 'Terms of Service', href: 'https://RemitX.com/terms', external: true },
+      { name: 'Privacy Policy', href: 'https://RemitX.com/privacy', external: true },
+      { name: 'Cookie Policy', href: 'https://RemitX.com/cookies', external: true },
+      { name: 'Security', href: 'https://RemitX.com/security', external: true },
+      { name: 'Compliance', href: 'https://RemitX.com/compliance', external: true }
     ]
   };
 
   const socialLinks = [
-    { icon: Twitter, href: 'https://twitter.com/FlowPay', label: 'Twitter', external: true },
-    { icon: Github, href: 'https://github.com/FlowPay', label: 'GitHub', external: true },
-    { icon: MessageCircle, href: 'https://discord.gg/FlowPay', label: 'Discord', external: true },
-    { icon: Mail, href: 'mailto:hello@FlowPay.com', label: 'Email', external: true }
+    { icon: Twitter, href: 'https://twitter.com/RemitX', label: 'Twitter', external: true },
+    { icon: Github, href: 'https://github.com/RemitX', label: 'GitHub', external: true },
+    { icon: MessageCircle, href: 'https://discord.gg/RemitX', label: 'Discord', external: true },
+    { icon: Mail, href: 'mailto:hello@RemitX.com', label: 'Email', external: true }
   ];
 
   const supportedTokens = [
@@ -85,7 +85,7 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
               <div className="relative">
               <img 
                 src="https://res.cloudinary.com/ecosheane/image/upload/v1749952368/logo_virjcs.jpg"
-                alt="FlowPay Logo"
+                alt="RemitX Logo"
                 className="w-12 h-12 rounded-xl object-cover transition-all duration-300 group-hover:scale-105"
               />
             </div>
@@ -214,7 +214,7 @@ const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="flex items-center space-x-6 mb-4 md:mb-0">
                 <p className="text-gray-400 text-sm">
-                  © 2025 FlowPay. All rights reserved.
+                  © 2025 RemitX. All rights reserved.
                 </p>
                 <div className="flex items-center space-x-2 text-xs text-gray-500">
                   <span>Built on</span>

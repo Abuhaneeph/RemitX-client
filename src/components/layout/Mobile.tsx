@@ -52,14 +52,16 @@ const MobileSidebar = ({
     { name: 'Dashboard', key: 'dashboard', icon: Home },
     { name: 'Send', key: 'send', icon: Send },
     { name: 'Swap', key: 'swap', icon: ArrowLeftRight },
-    { name: 'Save', key: 'savings', icon: PiggyBank },
-    { name: 'Buy/Sell', key: 'Buy/Sell', icon: DollarSignIcon },
+        {name:'Lending', key: 'lending', icon: PiggyBank},
+        {name: 'Yield Vault', key: 'yieldVault', icon: PiggyBank},
+  //  { name: 'Save', key: 'savings', icon: PiggyBank },
+//    { name: 'Buy/Sell', key: 'Buy/Sell', icon: DollarSignIcon },
   ];
 
   // Secondary navigation items (in "More" dropdown on desktop, full list on mobile)
   const secondaryNavigation = [
     { name: 'Faucet', key: 'faucet', icon: Droplets },
-    { name: 'Utility Pay', key: 'utility', icon: Zap },
+  //  { name: 'Utility Pay', key: 'utility', icon: Zap },
     { name: 'Admin', key: 'admin', icon: Shield },
   ];
 
@@ -82,12 +84,12 @@ const MobileSidebar = ({
               {/* Mobile Header */}
               <div className="flex items-center justify-between p-6 border-b border-stone-200">
                 <div className="flex items-center space-x-2">
-                  <div className="w-7 h-7 bg-gradient-to-br from-terracotta to-sage rounded-lg flex items-center justify-center shadow-sm">
-                    <span className="text-white font-bold text-xs">A</span>
-                  </div>
-                  <span className="font-bold text-xl bg-gradient-to-r from-terracotta to-sage bg-clip-text text-transparent">
-                    FlowPay
-                  </span>
+               
+               <img 
+                src="/RemitX-logo.png"
+                alt="FlowPay Logo"
+                className="w-30 h-20 rounded-xl object-cover transition-all duration-300 group-hover:scale-105"
+              />
                 </div>
                 <button onClick={() => setSidebarOpen(false)}>
                   <X className="w-6 h-6 text-stone-700" />
@@ -126,7 +128,7 @@ const MobileSidebar = ({
                     className="flex items-center space-x-3 w-full px-4 py-3 text-stone-700 hover:bg-stone-100 rounded-lg"
                   >
                     <MessageCircle className="w-5 h-5" />
-                    <span>Flowi</span>
+                    <span>RemiX</span>
                     <span className="ml-auto w-2 h-2 bg-gradient-to-r from-terracotta to-sage rounded-full animate-pulse"></span>
                   </button>
                   <button 
@@ -152,15 +154,15 @@ const MobileSidebar = ({
                   detailsButton={{
                     className: "!w-full !bg-green-600 !text-white !font-medium !px-4 !py-3 !rounded-lg",
                     displayBalanceToken: {
-                      2810: "0x0000000000000000000000000000000000000000"
+                      1114: "0x0000000000000000000000000000000000000000"
                     }
                   }}
                   connectModal={{
-                    title: "Connect to FlowPay",
+                    title: "Connect to RemitX",
                     showThirdwebBranding: false,
                   }}
                   switchButton={{
-                    label: "Switch to Morph Holesky"
+                    label: "Switch to Core Testnet"
                   }}
                 />
                 

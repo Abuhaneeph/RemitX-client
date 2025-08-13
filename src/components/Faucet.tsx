@@ -59,7 +59,7 @@ const FaucetComponent = () => {
     <div className="max-w-lg mx-auto space-y-6">
       <div className="text-center">
         <h1 className="text-3xl font-bold text-stone-800 mb-2">Faucet</h1>
-        <p className="text-stone-600">Get AfriRemit Testnet Tokens</p>
+        <p className="text-stone-600">Get RemitX Testnet Tokens</p>
       </div>
 
       <div className="bg-white rounded-2xl p-6 shadow-sm border border-stone-200">

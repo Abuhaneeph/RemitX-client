@@ -19,10 +19,9 @@ const LandingPage: React.FC<LandingPageProps> = ({ onPageChange }) => {
       <HeroSection onPageChange={onPageChange} />
       {/* <Stats /> */}
       <Features onPageChange={onPageChange} />
-      <TrustedPartners />
+
       {/* <Testimonials /> */}
-      {/* <Contact /> */}
-      <Footer />
+    
     </div>
   );
 };
